@@ -5,9 +5,14 @@ import map from '../images/sonora-map.png'
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            {/* HomeScreen's Title */}
+            
             <Text style={styles.title}>etnias de sonora</Text>
+            {/* Map image background */}
             <ImageBackground source={map} style={styles.map}>
             </ImageBackground>
+
+            {/* Scan Button */}
             <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('Profile', {name: 'isaac'})}>
                 <Text style={styles.textButton}>Escanear QR</Text>
             </TouchableOpacity>
