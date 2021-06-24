@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView } from 'react-native';
 import map from '../images/sonora-map.png'
-import icon from '../images/icon-01.png'
+import etnicIcon from '../images/icon-01.png'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const HomeScreen = ({ navigation }) => {
     return (
@@ -18,12 +19,13 @@ const HomeScreen = ({ navigation }) => {
             {/* Map image background */}
             <ImageBackground source={map} style={styles.map}>
                 <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
-                    <Image source={icon} style={styles.icon} />
+                    <Image source={etnicIcon} style={styles.icon} />
                 </TouchableOpacity>
             </ImageBackground>
 
             {/* Scan Button */}
             <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
+                <Icon name="qr-code-2" style={styles.buttonIcon}/>
                 <Text style={styles.textButton}>Escanear QR</Text>
             </TouchableOpacity>
         </View>
@@ -70,6 +72,11 @@ const styles = StyleSheet.create({
         width: '60%',
         backgroundColor: '#1591e6',
         borderRadius: 50,
+    },
+    buttonIcon: {
+        fontSize: 30,
+        color: '#e8e8e8',
+        marginRight: 10
     },
     textButton: {
         fontSize: 15,
