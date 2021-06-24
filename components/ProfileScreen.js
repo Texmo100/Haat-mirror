@@ -3,6 +3,6 @@ import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-nativ
 
 const ProfileScreen = ({ navigation, route }) => {
     return <Text>This is {route.params.name}'s profile</Text>;
-};
+}
 
 export default ProfileScreen

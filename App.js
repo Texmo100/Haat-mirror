@@ -5,7 +5,7 @@ import NavigationStack from './components/NavigationStack'
 const App = () => {
   return (
     <NavigationStack />
-  );
-};
+  )
+}
 
 export default App;

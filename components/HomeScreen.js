@@ -1,19 +1,29 @@
 import * as React from 'react';
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity} from 'react-native';
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView } from 'react-native';
 import map from '../images/sonora-map.png'
+import icon from '../images/icon-01.png'
 
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            {/* Status bar */}
+            <StatusBar
+                backgroundColor={'#4F211A'}
+                barStyle={'light-content'}
+            />
+
             {/* HomeScreen's Title */}
-            
             <Text style={styles.title}>etnias de sonora</Text>
+
             {/* Map image background */}
             <ImageBackground source={map} style={styles.map}>
+                <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
+                    <Image source={icon} style={styles.icon} />
+                </TouchableOpacity>
             </ImageBackground>
 
             {/* Scan Button */}
-            <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('Profile', {name: 'isaac'})}>
+            <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
                 <Text style={styles.textButton}>Escanear QR</Text>
             </TouchableOpacity>
         </View>
@@ -37,6 +47,20 @@ const styles = StyleSheet.create({
         height: 400,
         width: '100%',
         resizeMode: "cover",
+        position: 'relative'
+    },
+    iconContainer: {
+        position: 'absolute',
+        top: 160,
+        left: 110,
+        width: 60,
+        height: 60,
+        backgroundColor: 'transparent',
+        borderRadius: 50,
+    },
+    icon: {
+        width: '100%',
+        height: '100%',
     },
     scanButton: {
         flex: 1,
