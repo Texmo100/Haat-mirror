@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
 
             {/* Map image background */}
             <ImageBackground source={map} style={styles.map}>
-                <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
+                <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('EthnicTabBar')}>
                     <Image source={etnicIcon} style={styles.icon} />
                 </TouchableOpacity>
             </ImageBackground>

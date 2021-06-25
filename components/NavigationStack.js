@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
 import HomeScreen from './HomeScreen';
+import EthnicTabBar from './ethnicTabBar/EthnicTabBar';
 import ProfileScreen from './ProfileScreen';
 
 // ---- Create a stack variable
@@ -32,6 +32,12 @@ const NavigationStack = () => {
           name="Home"
           component={HomeScreen}
           options={optionsScreenDefault('Haat')}
+        />
+        {/* EthnicTabBar */}
+        <Stack.Screen
+          name="EthnicTabBar"
+          component={EthnicTabBar}
+          options={optionsScreenDefault('Ethnicity')}
         />
         {/* Profile Screen */}
         <Stack.Screen
