@@ -9,7 +9,7 @@ const Tab = createMaterialTopTabNavigator();
 
 // TabRender function
 
-const tabRender = ethnicData.map(tab => <Tab.Screen key={tab.id} name={tab.title}>{() => <EthnicTabTemplate title={tab.title}/>}</Tab.Screen>)
+const tabRender = ethnicData.map(tab => <Tab.Screen key={tab.id} name={tab.title}>{() => <EthnicTabTemplate tabData={tab}/>}</Tab.Screen>)
 
 const EthnicTabBar = () => {
     return (
