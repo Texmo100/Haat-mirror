@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView } from 'react-native';
 
-const Festivities = (props) => {
+const EthnicTabTemplate = (props) => {
     return(
         <View style={styles.container}>
-            <Text>{props.name} tab</Text>
+            <Text>{props.title} tab</Text>
         </View>
     )
 }
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Festivities
+export default EthnicTabTemplate
