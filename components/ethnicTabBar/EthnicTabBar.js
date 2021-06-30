@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import EthnicTabTemplate from './EthnicTabTemplate';
-import ethnicData from '../../data/EthnicData';
+import ethnicData from '../../data/ethnicData';
 
 // createMaterialTopTabNavigator
 const Tab = createMaterialTopTabNavigator();
