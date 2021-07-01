@@ -3,8 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 import EthnicTabBar from './ethnicTabBar/EthnicTabBar';
-import ProfileScreen from './ProfileScreen';
 import QrScanner from './QrScanner'
+import CraftTabBar from './craftTabBar/CraftTabBar';
+import ProfileScreen from './ProfileScreen';
 
 // ---- Create a stack variable
 const Stack = createStackNavigator();
@@ -45,6 +46,12 @@ const NavigationStack = () => {
           name="QrScanner"
           component={QrScanner}
           options={optionsScreenDefault('QrScanner')}
+        />
+        {/* CraftTabBar */}
+        <Stack.Screen
+          name="CraftTabBar"
+          component={CraftTabBar}
+          options={optionsScreenDefault('craft')}
         />
         {/* Profile Screen */}
         <Stack.Screen
