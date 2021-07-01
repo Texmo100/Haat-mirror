@@ -24,7 +24,7 @@ const HomeScreen = ({ navigation }) => {
             </ImageBackground>
 
             {/* Scan Button */}
-            <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('Profile', { name: 'isaac' })}>
+            <TouchableOpacity style={styles.scanButton} onPress={() => navigation.navigate('QrScanner')}>
                 <Icon name="qr-code-2" style={styles.buttonIcon}/>
                 <Text style={styles.textButton}>Escanear QR</Text>
             </TouchableOpacity>

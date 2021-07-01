@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 import EthnicTabBar from './ethnicTabBar/EthnicTabBar';
 import ProfileScreen from './ProfileScreen';
+import QrScanner from './QrScanner'
 
 // ---- Create a stack variable
 const Stack = createStackNavigator();
@@ -38,6 +39,12 @@ const NavigationStack = () => {
           name="EthnicTabBar"
           component={EthnicTabBar}
           options={optionsScreenDefault('Ethnicity')}
+        />
+        {/* QrScanner Screen */}
+        <Stack.Screen
+          name="QrScanner"
+          component={QrScanner}
+          options={optionsScreenDefault('QrScanner')}
         />
         {/* Profile Screen */}
         <Stack.Screen
