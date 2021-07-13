@@ -39,6 +39,17 @@ const CraftTabTemplate = (props) => {
                     {/* ---- contentCard ----*/}
                     <View style={styles.contentCard}>
                         <Text style={styles.titleCard}>{tabData.title}</Text>
+
+                        {/* Image Tab */}
+                        <View style={styles.sectionImage}>
+                            <Image
+                                style={styles.image}
+                                source={require('../../images/image-01.jpg')}
+                            />
+                        </View>
+
+                        {/* Description tab */}
+                        <Text style={styles.description}>{tabData.desc}</Text>
                     </View>
                     {/* ---- footerCard ----*/}
                     <View style={styles.footerCard}>
@@ -84,9 +95,8 @@ const styles = StyleSheet.create({
     },
     contentCard: {
         alignItems: 'center',
-        minHeight: 500,
-        maxHeight: '100%',
         marginTop: 40,
+        padding: 10,
         marginHorizontal: 10,
         borderWidth: 1,
         borderColor: '#b26231',
@@ -99,6 +109,24 @@ const styles = StyleSheet.create({
         color: '#2b2b2b',
         marginVertical: 10
     },
+    // ---- content styles section
+    sectionImage: {
+        width: '100%',
+        height: 400,
+        marginVertical: 10
+    },
+    image: {
+        height: '100%',
+        width: '100%',
+        resizeMode: 'cover',
+        borderRadius: 10
+    },
+    description: {
+        fontSize: 15,
+        textAlign: 'justify',
+        lineHeight: 25
+    },
+    // ----
     footerCard: {
         justifyContent: 'center',
         alignItems: 'center',
