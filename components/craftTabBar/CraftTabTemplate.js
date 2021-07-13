@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView, Dimensions } from 'react-native';
+import CardProcess from './CardProcess';
 import icon from '../../images/icon-02.png'
 
 const CraftTabTemplate = (props) => {
     const { tabData } = props
 
     if (tabData.title === 'process') {
+        const { procedure } = tabData
+        const CardsRender = procedure.map(process => <CardProcess key={process.id} cardData={process} counter={procedure.length}/>)
+
         return (
             <View style={styles.container}>
                 <ScrollView>
@@ -18,6 +22,9 @@ const CraftTabTemplate = (props) => {
                     {/* ---- contentCard ----*/}
                     <View style={styles.contentCard}>
                         <Text style={styles.titleCard}>{tabData.title}</Text>
+                        <View style={styles.cardsContainer}>
+                            {CardsRender}
+                        </View>
                     </View>
                     {/* ---- footerCard ----*/}
                     <View style={styles.footerCard}>
@@ -98,9 +105,6 @@ const styles = StyleSheet.create({
         marginTop: 40,
         padding: 10,
         marginHorizontal: 10,
-        borderWidth: 1,
-        borderColor: '#b26231',
-        borderRadius: 10
     },
     titleCard: {
         fontSize: 30,
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
         color: '#2b2b2b',
         marginVertical: 10
     },
-    // ---- content styles section
+    // ---- process tab content styles section
     sectionImage: {
         width: '100%',
         height: 400,
@@ -126,6 +130,9 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         lineHeight: 25
     },
+    cardsContainer: {
+        width: '100%',
+    },
     // ----
     footerCard: {
         justifyContent: 'center',
@@ -138,7 +145,8 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 10
     },
     footerText: {
-        color: '#b26231'
+        color: '#b26231',
+        textTransform: 'capitalize'
     }
 })
 
