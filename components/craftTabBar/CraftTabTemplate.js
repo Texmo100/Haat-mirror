@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, Button, View, SafeAreaView, Text, Alert, ImageBackground, TouchableOpacity, StatusBar, Image, ScrollView, Dimensions } from 'react-native';
 import CardProcess from './CardProcess';
+import CraftVideo from './CraftVideo';
 import icon from '../../images/icon-02.png'
 
-const CraftTabTemplate = (props) => {
-    const { tabData } = props
-
+const CraftTabTemplate = ({ tabData }) => {
     if (tabData.title === 'process') {
         const { procedure } = tabData
         const CardsRender = procedure.map(process => <CardProcess key={process.id} cardData={process} counter={procedure.length}/>)
@@ -33,7 +32,34 @@ const CraftTabTemplate = (props) => {
                 </ScrollView>
             </View>
         )
-    } else {
+    } else if(tabData.title === 'videos'){
+        const { videos } = tabData
+        const videosRender = videos.map(video => <CraftVideo key={video.id} videoData={video}/>)
+
+        return (
+            <View style={styles.container}>
+                <ScrollView>
+                    {/* ---- headerCard ----*/}
+                    <View style={styles.headerCard}>
+                        <View style={styles.iconContainer}>
+                            <Image source={icon} style={styles.headerCardIcon} />
+                        </View>
+                    </View>
+                    {/* ---- contentCard ----*/}
+                    <View style={styles.contentCard}>
+                        <Text style={styles.titleCard}>{tabData.title}</Text>
+                        <View style={styles.cardsContainer}>
+                            {videosRender}
+                        </View>
+                    </View>
+                    {/* ---- footerCard ----*/}
+                    <View style={styles.footerCard}>
+                        <Text style={styles.footerText}>{tabData.title}</Text>
+                    </View>
+                </ScrollView>
+            </View>
+        )
+    }else{
         return (
             <View style={styles.container}>
                 <ScrollView>
